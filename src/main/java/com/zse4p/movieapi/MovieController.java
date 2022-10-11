@@ -1,9 +1,7 @@
 package com.zse4p.movieapi;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,7 +12,7 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping("/movies")
-    public List<Movie> movies(
+    public List<Movie> getMovies(
 //            @RequestParam(value = "title", defaultValue = "Movie")
 //            String title,
 //            @RequestParam(value = "year", defaultValue = "2022")
@@ -22,5 +20,17 @@ public class MovieController {
     ) {
         return movieService.getAllMovies();
     }
+
+//    @PostMapping("/postReview")
+//    public void postReview(
+//            @RequestParam(value = "movie_id")
+//            Integer movie_id,
+//            @RequestParam(value = "content")
+//            String content,
+//            @RequestParam(value = "rating")
+//            Short rating
+//    ) {
+//        Review review = new Review()
+//    }
 
 }

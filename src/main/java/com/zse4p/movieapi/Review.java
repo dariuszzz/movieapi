@@ -1,28 +1,32 @@
 package com.zse4p.movieapi;
 
-
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class Movie {
+public class Review {
     @Id
     @GeneratedValue
     private Integer id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId
     @Getter
     @NonNull
-    private String title;
+    private Uzytnik author;
 
     @Getter
     @NonNull
-    private Integer release_year;
+    private String content;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    public List<Review> reviews;
+    @Getter
+    @NonNull
+    private Short rating;
 
+    @Getter
+    @Setter
+    private Integer likes = 0;
 }

@@ -1,28 +1,29 @@
 package com.zse4p.movieapi;
 
-
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@RequiredArgsConstructor
 @NoArgsConstructor
-public class Movie {
+@RequiredArgsConstructor
+public class Uzytnik {
     @Id
     @GeneratedValue
     private Integer id;
 
     @Getter
     @NonNull
-    private String title;
+    private String username;
 
     @Getter
     @NonNull
-    private Integer release_year;
+    private String password;
 
     @OneToMany(fetch = FetchType.LAZY)
     public List<Review> reviews;
+
+
 
 }

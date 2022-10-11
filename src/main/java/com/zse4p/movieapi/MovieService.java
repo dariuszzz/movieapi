@@ -23,6 +23,7 @@ public class MovieService implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-
+        movieRepo.save(new Movie("Gayniggers From Outer Space", 1992));
+        movieRepo.save(new Movie("Marta mowi", 2008));
     }
 }
