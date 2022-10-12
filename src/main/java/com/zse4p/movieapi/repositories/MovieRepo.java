@@ -1,10 +1,12 @@
-package com.zse4p.movieapi;
+package com.zse4p.movieapi.repositories;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.zse4p.movieapi.models.Movie;
 
+@Repository
 public interface MovieRepo extends CrudRepository<Movie, Integer> {
 
     @Query(value = "SELECT * FROM movies WHERE " +

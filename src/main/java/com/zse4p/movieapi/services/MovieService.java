@@ -1,4 +1,4 @@
-package com.zse4p.movieapi;
+package com.zse4p.movieapi.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Service;
 
 import com.zse4p.movieapi.models.Movie;
+import com.zse4p.movieapi.repositories.MovieRepo;
 
 import java.util.ArrayList;
 import java.util.List;

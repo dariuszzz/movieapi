@@ -15,11 +15,11 @@ public class User {
     @GeneratedValue
     private Integer id;
 
+    @Column(unique = true)
     @Getter
     @NonNull
     private String username;
 
-    @Getter
     @NonNull
     private String password;
 
