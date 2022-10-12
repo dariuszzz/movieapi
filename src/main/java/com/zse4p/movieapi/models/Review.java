@@ -1,4 +1,4 @@
-package com.zse4p.movieapi;
+package com.zse4p.movieapi.models;
 
 import lombok.*;
 
@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 @RequiredArgsConstructor
 @NoArgsConstructor
+@Table(name = "reviews")
 public class Review {
     @Id
     @GeneratedValue
@@ -16,7 +17,7 @@ public class Review {
     @MapsId
     @Getter
     @NonNull
-    private Uzytnik author;
+    private User author;
 
     @Getter
     @NonNull

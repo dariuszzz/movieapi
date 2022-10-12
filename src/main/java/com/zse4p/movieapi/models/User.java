@@ -1,14 +1,16 @@
-package com.zse4p.movieapi;
+package com.zse4p.movieapi.models;
 
 import lombok.*;
 
 import javax.persistence.*;
+
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class Uzytnik {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue
     private Integer id;

@@ -1,9 +1,14 @@
-package com.zse4p.movieapi;
+package com.zse4p.movieapi.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.zse4p.movieapi.MovieSearchRequest;
+import com.zse4p.movieapi.MovieService;
+import com.zse4p.movieapi.models.Movie;
+
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class MovieController {
@@ -13,12 +18,16 @@ public class MovieController {
 
     @GetMapping("/movies")
     public List<Movie> getMovies(
-//            @RequestParam(value = "title", defaultValue = "Movie")
-//            String title,
-//            @RequestParam(value = "year", defaultValue = "2022")
-//            int year
+        @RequestBody(required = false)
+        MovieSearchRequest searchOptions
     ) {
-        return movieService.getAllMovies();
+        if (searchOptions == null) return movieService.getAllMovies();
+
+        String title = searchOptions.getTitle() == null ? "" : searchOptions.getTitle();
+        String director = searchOptions.getDirector() == null ? "" : searchOptions.getDirector();
+
+        return movieService.getByCriteria(title, director, searchOptions.getReleaseYear());
+
     }
 
 //    @PostMapping("/postReview")
