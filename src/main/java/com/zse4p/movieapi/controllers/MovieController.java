@@ -8,7 +8,6 @@ import com.zse4p.movieapi.MovieService;
 import com.zse4p.movieapi.models.Movie;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class MovieController {
