@@ -19,11 +19,19 @@ public class Review {
     @NonNull
     private User author;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
     @Getter
+    @NonNull
+    private Movie movie;
+
+    @Getter
+    @Setter
     @NonNull
     private String content;
 
     @Getter
+    @Setter
     @NonNull
     private Short rating;
 
