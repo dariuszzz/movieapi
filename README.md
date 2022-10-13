@@ -15,7 +15,7 @@
 - **/movie**
     - [ ] **/{id}** - Movie with given id
     - [ ] **/search** - List of movies satysfying given criteria\
-            `GET ?title=, ?director=, ?releaseYear=` \
+            <!-- `GET ?title=, ?director=, ?releaseYear=` \ -->
             `GET { title?, director?, releaseYear? }`
     
 

@@ -65,7 +65,7 @@ public class UserController {
     public ResponseEntity<?> login(
         @RequestBody
         RegisterRequest registerReq
-        ) {
+    ) {
         String username = registerReq.getUsername();
         String password = registerReq.getPassword();
         
