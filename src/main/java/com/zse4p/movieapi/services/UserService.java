@@ -22,6 +22,18 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
+    public Optional<User> findById(Integer id) {
+        return userRepo.findById(id);
+    }
+
+    public Optional<User> findByUsername(String username) {
+        return userRepo.findByUsername(username);
+    }
+
+    public User save(User user) {
+        return userRepo.save(user);
+    }
+
     public <T> Pair<User, T> validateAuthenticatedRequest(AuthenticatedRequest<T> req) {
         return validateAuthenticatedRequest(req, false);
     }

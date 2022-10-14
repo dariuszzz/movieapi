@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.zse4p.movieapi.UserRole;
 
 import java.util.List;
 
@@ -33,6 +34,15 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY)
     public List<Review> reviews;
 
+    @Getter
+    @Setter
+    @Enumerated
+    public UserRole role = UserRole.User;
 
+    public User(String username, String password, UserRole role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
 
 }

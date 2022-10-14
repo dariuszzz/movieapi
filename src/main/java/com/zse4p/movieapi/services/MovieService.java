@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MovieService implements ApplicationRunner {
+public class MovieService {
     @Autowired
     private MovieRepo movieRepo;
 
@@ -33,9 +33,5 @@ public class MovieService implements ApplicationRunner {
         return movies;
     }
 
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-        movieRepo.save(new Movie("Gayniggers From Outer Space", 1992, "Robert Lewandowski"));
-        movieRepo.save(new Movie("Marta mowi", 2008, "Jan Pawel Drugi"));
-    }
+
 }
